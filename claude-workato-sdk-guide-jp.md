@@ -373,7 +373,6 @@ PROD
 | エラー | 原因と対処 |
 |---|---|
 | `401 Unauthorized`（exec 実行時） | アクセストークンが期限切れ。oauth2 コネクターは `workato oauth2` を、custom_auth は `workato exec test` を実行してトークンを更新してください |
-| `VCR::Errors::UnhandledHTTPRequestError` | VCR カセットが未録音か、トークンが変わってマッチしなくなっています。`VCR_RECORD_MODE=once bundle exec rspec <ファイル>` で再録音してください |
 | `master.key not found` | `master.key` が見つかりません。`WORKATO_CONNECTOR_MASTER_KEY` 環境変数を設定するか、`--key` オプションでパスを指定してください |
 | push で `403` エラー | API トークンに必要なスコープがありません。Connector SDK スコープを持つトークンか確認してください |
 | `undefined method`（connector.rb） | DSL の構文エラーか、Ruby `def` を使っています（lambda を使ってください）。`workato exec test --debug` でスタックトレースを確認してください |
