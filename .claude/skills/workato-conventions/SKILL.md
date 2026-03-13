@@ -13,6 +13,8 @@ A connector is a single Ruby hash. All keys are optional except `title` and `tes
 ```ruby
 {
   title: 'My Connector',
+  custom_action: Boolean,         # optional — enable ad-hoc HTTP actions from UI
+  custom_action_help: Hash,       # optional — help panel config for custom actions
   connection: Hash,
   test: lambda do |connection| ... end,
   actions: Hash,
@@ -152,6 +154,27 @@ methods: {
   end,
 }
 ```
+
+## custom_action
+
+Set `custom_action: true` to let users build ad-hoc HTTP actions from the Workato UI (useful when no built-in action covers a specific API endpoint).
+
+Pair with `custom_action_help` to guide users toward the right documentation:
+
+```ruby
+custom_action: true,
+
+custom_action_help: {
+  learn_more_url:  'https://developer.example.com/api',
+  learn_more_text: 'API documentation',
+  body: "<p>Build your own action with an HTTP request. <b>Authorization is included automatically.</b></p>"
+}
+```
+
+- `body`: HTML string shown in the help panel
+- `learn_more_url`: link target for the "learn more" button
+- `learn_more_text`: label for that button
+- Both keys are optional; omit `custom_action_help` entirely to show no help text
 
 ## connection
 

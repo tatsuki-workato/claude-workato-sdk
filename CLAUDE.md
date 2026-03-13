@@ -100,8 +100,9 @@ This project includes specialized subagents and skills under `.claude/`. Use the
 | `workato-conventions` | Writing or reviewing connector code |
 | `rspec-patterns` | Writing or reviewing spec files |
 | `openapi-to-workato` | Translating OpenAPI types, auth, or endpoints to Workato DSL |
+| `workato-connector-sdk-tdd` | Following Red-Green-Refactor TDD cycle for connector development |
 
-`workato-sdk-pro` preloads all three skills automatically.
+`workato-sdk-pro` preloads all four skills automatically.
 `openapi-analyzer` preloads `openapi-to-workato`.
 
 ---
